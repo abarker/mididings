@@ -1,0 +1,12 @@
+Timeout (0:00:05)!
+Thread 0x000078e1c580d6c0 (most recent call first):
+  File "minimal_output_event.py", line 18 in slow
+  File "mididings/units/call.py", line 40 in do_call
+  File "mididings/engine.py", line 217 in process_event
+  File "/usr/lib/python3.12/threading.py", line 1010 in run
+  File "/usr/lib/python3.12/threading.py", line 1073 in _bootstrap_inner
+  File "/usr/lib/python3.12/threading.py", line 1030 in _bootstrap
+
+Thread 0x000078e1c7491080 (most recent call first):
+  File "mididings/engine.py", line 221 in output_event
+  File "minimal_output_event.py", line 30 in <module>

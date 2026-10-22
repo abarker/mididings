@@ -1,5 +1,15 @@
 Deadlock reproduction for the GIL / engine-mutex fix.
 
+Minimal, no JACK needed (each deadlocks with stock mididings and prints
+"no deadlock" with the fix; faulthandler prints both stacks on a hang):
+
+    python minimal.py               # dummy backend, process_event
+    python minimal_output_event.py  # ALSA sequencer, output_event
+
+stock_output_minimal_output_event.txt is the stock output of the second.
+
+Under real load, with a running JACK engine:
+
 Needs a private JACK server and JACK-Client (pip install JACK-Client):
 
     JACK_NO_START_SERVER=1 jackd -n mdtest_srv -d dummy -r 48000 -p 1024 &
